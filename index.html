@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAT Score Up</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app">
+        <header class="header">
+            <h1>SAT Score Up</h1>
+            <p>Practice Tests for SAT Success</p>
+        </header>
+
+        <main class="main">
+            <!-- Test List View -->
+            <div id="test-list-view" class="view active">
+                <div class="container">
+                    <h2>Available Tests</h2>
+                    <div id="tests-container" class="tests-grid">
+                        <div class="loading">Loading tests...</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Test Taking View -->
+            <div id="test-view" class="view">
+                <div class="container">
+                    <div class="test-header">
+                        <button id="back-to-tests" class="btn btn-secondary">← Back to Tests</button>
+                        <div class="test-info">
+                            <h2 id="current-test-title">Test Title</h2>
+                            <div class="module-nav">
+                                <span id="current-module">Module 1 of 4</span>
+                                <div class="progress-bar">
+                                    <div id="progress-fill" class="progress-fill"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="questions-container" class="questions-container">
+                        <div class="loading">Loading questions...</div>
+                    </div>
+
+                    <div class="test-controls">
+                        <button id="submit-module" class="btn btn-primary">Submit Module</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results View -->
+            <div id="results-view" class="view">
+                <div class="container">
+                    <div class="results-header">
+                        <h2>Module Results</h2>
+                        <div id="score-summary" class="score-summary">
+                            <div class="score-circle">
+                                <span id="score-percentage">0%</span>
+                            </div>
+                            <div class="score-details">
+                                <p><span id="correct-count">0</span> out of <span id="total-count">0</span> correct</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="question-results" class="question-results">
+                        <!-- Results will be populated here -->
+                    </div>
+
+                    <div class="results-controls">
+                        <button id="next-module" class="btn btn-primary">Next Module</button>
+                        <button id="back-to-modules" class="btn btn-secondary">Back to Tests</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
