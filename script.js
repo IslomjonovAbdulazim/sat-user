@@ -127,6 +127,21 @@ class SATApp {
             `;
             container.appendChild(questionDiv);
         });
+
+        // Add click event listeners to make entire choice clickable
+        document.querySelectorAll('.choice').forEach(choice => {
+            choice.addEventListener('click', function() {
+                const radio = this.querySelector('input[type="radio"]');
+                if (radio) {
+                    radio.checked = true;
+                    
+                    // Remove selected class from all choices in this question
+                    this.parentElement.querySelectorAll('.choice').forEach(c => c.classList.remove('selected'));
+                    // Add selected class to clicked choice
+                    this.classList.add('selected');
+                }
+            });
+        });
     }
 
     renderMarkdown(markdown) {
@@ -176,17 +191,6 @@ class SATApp {
             }
         });
 
-        document.querySelectorAll('.choice').forEach(choice => {
-            choice.addEventListener('click', function() {
-                const radio = this.querySelector('input[type="radio"]');
-                if (radio) {
-                    radio.checked = true;
-                    
-                    this.parentElement.querySelectorAll('.choice').forEach(c => c.classList.remove('selected'));
-                    this.classList.add('selected');
-                }
-            });
-        });
     }
 
     async submitModule() {
